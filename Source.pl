@@ -1,9 +1,6 @@
 /*Jacob Besse
 Prolog*/
 
-/*This is the data set.*/
-
-[dataset].
 
 /* Finds the length of a list, while there is something in the list it increments N
 	when there is nothing left it returns.*/
