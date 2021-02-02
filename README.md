@@ -34,14 +34,32 @@ edge(e, d, 6).
 edge(a, h, 2).
 edge(h, d, 1).
 
-Run:
+### Run:
 
+#### manual: 
 
-| ?- [prolog].
+| ?- ["Source"].
 
 yes
+
+| ?- ["dataset"].
+
+yes
+
+
 | ?- shortest_path(Path).
 
 Path = 20-[a,h,d,e,b,c,a]
 
 yes
+
+#### automatic
+
+| ?- [main].
+
+true
+
+| ?- run
+
+ Path = 20-[a,h,d,e,b,c,a] 
+
