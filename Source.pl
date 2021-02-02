@@ -3,28 +3,7 @@ Prolog*/
 
 /*This is the data set.*/
 
-edge(a, b, 3).
-edge(a, c, 4).
-edge(a, d, 2).
-edge(a, e, 7).
-edge(b, c, 4).
-edge(b, d, 6).
-edge(b, e, 3).
-edge(c, d, 5).
-edge(c, e, 8).
-edge(d, e, 6).
-edge(b, a, 3).
-edge(c, a, 4).
-edge(d, a, 2).
-edge(e, a, 7).
-edge(c, b, 4).
-edge(d, b, 6).
-edge(e, b, 3).
-edge(d, c, 5).
-edge(e, c, 8).
-edge(e, d, 6).
-edge(a, h, 2).
-edge(h, d, 1).
+[dataset].
 
 /* Finds the length of a list, while there is something in the list it increments N
 	when there is nothing left it returns.*/
