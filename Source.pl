@@ -6,12 +6,15 @@ Prolog*/
 	when there is nothing left it returns.*/
 
 len([], 0).
-len([H|T], N):- len(T, X), N is X+1 .
+len([_|T], N):- len(T, X), N is X+1 .
+
+all_edges(Ls,Len):-
+	findall(X,edge(X,_,_),L),sort(L,Ls),length(Ls,Len).
 
 /*Best path, is called by shortest_path.  It sends it the paths found in a
  path, distance format*/
 
-best_path(Visited, Total):- path(a, a, Visited, Total).
+best_path(Visited, Total):- all_edges([H|_],_),path(H, H, Visited, Total).
 
 
 /*Path is expanded to take in distance so far and the nodes visited */
@@ -29,8 +32,11 @@ path(Start, Fin, CurrentLoc, Visited, Costn, Total) :-
 	sure the graph has touch every node*/
 
 path(Start, Fin, CurrentLoc, Visited, Costn, Total) :-
-    edge(Start, Fin, Distance), reverse([Fin|CurrentLoc], Visited), len(Visited, Q),
-    (Q\=7 -> Total is 100000; Total is Costn + Distance).
+    edge(Start, Fin, Distance), 
+    reverse([Fin|CurrentLoc], Visited), 
+    len(Visited, Q),
+    all_edges(_,Len),
+    (Q\=Len+1 -> Total is 100000; Total is Costn + Distance).
 
 /*This is called to find the shortest path, takes all the paths, collects them in holder.
 	Then calls pick on that holder which picks the shortest path and returns it*/
