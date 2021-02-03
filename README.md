@@ -38,11 +38,11 @@ edge(h, d, 1).
 
 #### manual: 
 
-| ?- ["Source"].
+| ?- ['Source'].
 
 yes
 
-| ?- ["dataset"].
+| ?- ['dataset'].
 
 yes
 
@@ -59,7 +59,7 @@ yes
 
 true
 
-| ?- run
+| ?- run.
 
  Path = 20-[a,h,d,e,b,c,a] 
 
