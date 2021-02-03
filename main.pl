@@ -2,8 +2,8 @@
 Prolog*/
 
 run :- 
-	["dataset.pl","Source.pl"],
+	['dataset.pl','Source.pl'],
 	shortest_path(Path),
-	writeln(Path).
+	write(Path),nl.
 
 
