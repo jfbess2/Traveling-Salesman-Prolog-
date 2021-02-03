@@ -35,8 +35,8 @@ path(Start, Fin, CurrentLoc, Visited, Costn, Total) :-
     edge(Start, Fin, Distance), 
     reverse([Fin|CurrentLoc], Visited), 
     len(Visited, Q),
-    all_edges(_,Len),
-    (Q\=Len+1 -> Total is 100000; Total is Costn + Distance).
+    all_edges(_,L),succ(L,Len),
+    (Q\=Len -> Total is 100000; Total is Costn + Distance).
 
 /*This is called to find the shortest path, takes all the paths, collects them in holder.
 	Then calls pick on that holder which picks the shortest path and returns it*/
